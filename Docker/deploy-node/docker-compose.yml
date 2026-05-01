@@ -1,0 +1,21 @@
+# version of docker
+version: "3.8"
+
+# defining multiple container (services)
+services:
+  # postgres service
+  postgres:
+    image: postgres # postgres image from dockerhub
+    ports:
+      - "5432:5432" # PC port : container port
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: review
+      POSTGRES_PASSWORD: password 
+  
+  # redis service
+  redis:
+    image: redis # redis image from dockerhub
+    ports:
+      - "6379:6379"
+    
